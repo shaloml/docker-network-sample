@@ -29,8 +29,7 @@ namespace ex4.Dal
         {
 
             //optionsBuilder.UseSqlServer(
-//                 "Data Source=localhost;Initial Catalog=dddddd;Integrated Security=True");
-                 //"Server = (localdb)\\mssqllocaldb; Database = SamuraiAppData; Trusted_Connection = True; ");
+            //     "Data Source=localhost;Initial Catalog=dddddd;Integrated Security=True");
         }
 
     }
