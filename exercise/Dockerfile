@@ -7,17 +7,17 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY ["ex4/ex4.csproj", "ex4/"]
+COPY ["exercise/Exercise.csproj", "exercise/"]
 COPY ["DataAcsess.Core/DataAcsess.Core.csproj", "DataAcsess.Core/"]
-RUN dotnet restore "ex4/ex4.csproj"
+RUN dotnet restore "exercise/Exercise.csproj"
 COPY . .
-WORKDIR "/src/ex4"
-RUN dotnet build "ex4.csproj" -c Release -o /app/build
+WORKDIR "/src/exercise"
+RUN dotnet build "Exercise.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "ex4.csproj" -c Release -o /app/publish
+RUN dotnet publish "Exercise.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "ex4.dll"]
+ENTRYPOINT ["dotnet", "Exercise.dll"]
