@@ -22,5 +22,6 @@
 7. start container my-app
 
 Wait 30 seconds...
+
 8. Browse to: http://localhost:8001/Samurai
 
